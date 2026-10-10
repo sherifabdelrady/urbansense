@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "urbansense"
+version = "0.1.0"
+description = "Real-time urban object detection with YOLOv8 + INT8 ONNX at 45 FPS"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Sherif Abd El-Rady", email = "sherifabdelrady@gmail.com" },
+]
+keywords = ["computer-vision", "object-detection", "yolov8", "onnx"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=2.0",
+  "torchvision>=0.15",
+  "ultralytics>=8.0",
+  "opencv-python",
+  "numpy",
+  "onnx",
+  "onnxruntime",
+]
+
+[project.urls]
+Homepage = "https://sherifabdelrady.github.io/cv-portfolio/"
+Repository = "https://github.com/sherifabdelrady/urbansense"
+Issues = "https://github.com/sherifabdelrady/urbansense/issues"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
